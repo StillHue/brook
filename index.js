@@ -11,6 +11,10 @@ playdl.setToken({
   }
 });
 
+(async () => {
+  await playdl.setCookie('./cookies.txt');
+})();
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
