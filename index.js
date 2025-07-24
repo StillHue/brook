@@ -3,6 +3,14 @@ const { Client, GatewayIntentBits, Collection, REST, Routes, SlashCommandBuilder
 const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus, NoSubscriberBehavior } = require('@discordjs/voice');
 const playdl = require('play-dl');
 
+playdl.setToken({
+  spotify: {
+    client_id: process.env.SPOTIFY_CLIENT_ID,
+    client_secret: process.env.SPOTIFY_CLIENT_SECRET,
+    refresh_token: ''
+  }
+});
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
